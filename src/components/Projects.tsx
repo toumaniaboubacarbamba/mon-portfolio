@@ -32,7 +32,7 @@ const projects = [
         id: 3,
         title: 'Application mobile Trello',
         description: 'Application mobile interagissant avec l\'API Trello pour gérer vos tableaux et tâches depuis votre smartphone.',
-        technologies: ['React Native', 'Trello API', 'Redux'],
+        technologies: ['React Native', 'Trello API', 'Expo'],
         demoLink: '#',
         repoLink: '#',
         image: img3,
