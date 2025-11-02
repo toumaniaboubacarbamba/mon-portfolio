@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react"
-import img from '../assets/img.jpg'
+import img from '../assets/img2.jpg'
 
 const Home = () => {
     return (
@@ -8,14 +8,16 @@ const Home = () => {
             <div className="flex flex-col ">
                 <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left mt-4 md:mt-0">
                     Bonjour , <br /> je suis {" "}
-                    <span className="text-accent">Lucdev</span>
+                    <span className="text-accent">ToumaniDev</span>
                 </h1>
 
                 <p className="my-4 text-md text-center md:text-left">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic quos nesciunt explicabo ab asperiores doloremque dolorem dolorum,
-                    <br /> qui vitae distinctio. A, doloribus sequi. Accusamus provident aliquam modi, quasi vel nostrum..
+                    Développeur Fullstack Junior titulaire d'une licence et finalisant mon Master 2.
+                    <br />Formé intensivement au bootcamp We.Code, je maîtrise React, Node.js et MongoDB.
+                    <br />Alliant solide formation académique et compétences techniques récentes,
+                    <br />je suis passionné par le développement web et recherche un premier challenge professionnel.
                 </p>
-                <a href="" className=" btn btn-accent md:w-fit">
+                <a href="#contact" className="btn btn-accent md:w-fit">
                     <Mail className="w-5 h-5" />
                     Contactez-moi
                 </a>
@@ -23,7 +25,7 @@ const Home = () => {
             </div>
 
             <div className="md:ml-60">
-                <img src={img} alt="" className="w-96 h-96 object-cover border-8 border-accent shadow-xl" 
+                <img src={img} alt="Photo de ToumaniDev" className="w-96 h-96 object-cover border-8 border-accent shadow-xl" 
                 style={{
                     borderRadius : "30% 70% 70% 30% / 67% 62% 38% 33%"
                 }}
