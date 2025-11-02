@@ -1,4 +1,4 @@
-import { Container, Facebook, Twitter, Instagram, Linkedin, Mail, School } from "lucide-react"
+import { Container, Facebook, Linkedin, Mail, School } from "lucide-react"
 
 const Footer = () => {
     return (

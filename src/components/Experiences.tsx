@@ -62,9 +62,9 @@ const experiences = [
         period: "2025 - 2025(6 mois)",
         description: [
             "Formation intensive en développement web fullstack sur 6 mois",
-            "Maîtrise des technologies modernes : React, Node.js, Express, MongoDB",
+            "Maîtrise des technologies modernes : Laravel, Flutter, MongoDB...",
             "Réalisation de projets concrets avec méthodologie agile",
-            "Développement d'applications web complètes from scratch",
+            "Développement d'applications web complètes de la conception au déploiement",
             "Travail en équipe sur des projets collaboratifs",
             "Préparation aux environnements professionnels de développement",
         ],
