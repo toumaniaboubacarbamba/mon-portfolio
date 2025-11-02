@@ -8,7 +8,7 @@ const Footer = () => {
                 <Container className="w-10 h-10" />
                 <p className="font-bold">
                     Toumani
-                    <span className="text-accent">DEV FULLSTACK</span>
+                    <span className="text-accent">DEV FULLSTACK JUNIOR</span>
                 </p>
                 <p>Copyright © {new Date().getFullYear()} -  Tous droits réservés</p>
             </aside>
