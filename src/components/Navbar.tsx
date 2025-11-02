@@ -8,7 +8,7 @@ const Navbar = () => {
             >
                 <Container className="mr-2" />
                 Toumani
-                <span className="text-accent">DEV</span>
+                <span className="text-accent">DEV FULLSTACK JUNIOR</span>
             </a>
 
             <ul
