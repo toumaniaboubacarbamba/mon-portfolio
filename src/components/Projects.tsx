@@ -1,8 +1,7 @@
 import Title from "./Title"
 
 import img1 from '../assets/projects/1.png';
-import img2 from '../assets/projects/2.png';
-import img3 from '../assets/projects/3.png';
+import Trelloclone from '../assets/projects/Trello Clone.jpg';
 import img4 from '../assets/projects/4.png';
 import img5 from '../assets/projects/5.png';
 import img6 from '../assets/projects/6.png';
@@ -19,7 +18,7 @@ const projects = [
         repoLink: '#',
         image: img1,
     },
-    {
+    /* {
         id: 2,
         title: 'Clone de Trello - Application web',
         description: 'Reproduction des fonctionnalités principales de Trello avec gestion de tableaux, listes et cartes en temps réel.',
@@ -27,7 +26,7 @@ const projects = [
         demoLink: '#',
         repoLink: '#',
         image: img2,
-    },
+    }, */
     {
         id: 3,
         title: 'Application mobile Trello',
@@ -35,15 +34,15 @@ const projects = [
         technologies: ['React Native', 'Trello API', 'Expo'],
         demoLink: '#',
         repoLink: '#',
-        image: img3,
+        image: Trelloclone,
     },
     {
         id: 4,
         title: 'Plateforme de billetterie événementielle',
         description: 'Système complet de publication et réservation de tickets d\'événements avec paiement en ligne et gestion des places.',
         technologies: ['React', 'NestJS', 'MongoDB'],
-        demoLink: '#',
-        repoLink: '#',
+        demoLink: 'https://my-show-time.onrender.com/',
+        repoLink: 'https://github.com/toumaniaboubacarbamba/myshowtime',
         image: img4,
     },
     {
@@ -52,7 +51,7 @@ const projects = [
         description: 'Plateforme similaire à AlloCiné avec fiches films, critiques, notations et système de recommandations.',
         technologies: ['Next.js', 'MongoDB', 'TypeScript'],
         demoLink: '#',
-        repoLink: '#',
+        repoLink: 'https://github.com/toumaniaboubacarbamba/RottenTomatos',
         image: img5,
     },
     {
