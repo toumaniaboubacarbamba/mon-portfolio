@@ -17,7 +17,7 @@ const Home = () => {
                     <br />Alliant solide formation académique et compétences techniques récentes,
                     <br />je suis passionné par le développement web et recherche un premier challenge professionnel.
                 </p>
-                <a href="https://mail.google.com/mail/u/0/?fs=1&to=bambaaboubacartoumani@gmail.com&su=Subject&body=Message" target="_blank" rel="noopener noreferrer" className="btn btn-accent md:w-fit">
+                <a href="mailto:bambaaboubacartoumani@gmail.com?subject=Contact%20depuis%20portfolio" className="btn btn-accent md:w-fit" aria-label="Envoyer un e-mail">
                     <Mail className="w-5 h-5" />
                     Contactez-moi
                 </a>
