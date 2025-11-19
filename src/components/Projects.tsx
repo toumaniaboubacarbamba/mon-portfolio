@@ -50,7 +50,7 @@ const projects = [
         title: 'Application de présentation de films',
         description: 'Plateforme similaire à AlloCiné avec fiches films, critiques, notations et système de recommandations.',
         technologies: ['Next.js', 'MongoDB', 'TypeScript'],
-        demoLink: '#',
+        demoLink: 'https://rottentomatos.onrender.com/',
         repoLink: 'https://github.com/toumaniaboubacarbamba/RottenTomatos',
         image: img5,
     },
