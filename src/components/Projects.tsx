@@ -1,6 +1,6 @@
 import Title from "./Title"
 
-import img1 from '../assets/projects/1.png';
+import img1 from '../assets/projects/YOWL.png';
 import Trelloclone from '../assets/projects/Trello Clone.jpg';
 import img4 from '../assets/projects/4.png';
 import img5 from '../assets/projects/5.png';
@@ -14,8 +14,8 @@ const projects = [
         title: 'Plateforme de commentaires de contenu web',
         description: 'Application web permettant aux utilisateurs de commenter tout type de contenu sur internet avec système de modération et notation.',
         technologies: ['Laravel', 'Vue.js', 'MySQL'],
-        demoLink: '#',
-        repoLink: '#',
+        demoLink: 'https://www.figma.com/design/my1EaSCuzlk87Mfn4Je5PF/YOWL-With-white-theme?node-id=0-1&t=LQGMb5hGW2c2is4q-1',
+        repoLink: 'https://github.com/toumaniaboubacarbamba/YOWL',
         image: img1,
     },
     /* {
