@@ -12,11 +12,11 @@ const Home = () => {
                 </h1>
 
                 <p className="my-4 text-md text-center md:text-left">
-                    Développeur Fullstack Junior titulaire d'une licence et finalisant mon Master 2.
-                    <br />Formé intensivement au bootcamp We.Code, je maîtrise React, Node.js et MongoDB.
-                    <br />Alliant solide formation académique et compétences techniques récentes,
-                    <br />je suis passionné par le développement web et recherche un premier challenge professionnel.
-                </p>
+    Développeur Fullstack titulaire d'une licence et finalisant mon Master 2.
+    <br />Formé intensivement au bootcamp We.Code, je travaille avec l'écosystème <span className="text-accent font-semibold">JavaScript/TypeScript</span> côté web.
+    <br />Je développe également des applications mobiles avec <span className="text-accent font-semibold">Flutter</span> et des APIs avec <span className="text-accent font-semibold">Laravel</span>.
+    <br />Passionné par le développement web et mobile, je recherche un premier challenge professionnel.
+</p>
                 <a href="mailto:bambaaboubacartoumani@gmail.com?subject=Contact%20depuis%20portfolio" className="btn btn-accent md:w-fit" aria-label="Envoyer un e-mail">
                     <Mail className="w-5 h-5" />
                     Contactez-moi

@@ -3,8 +3,9 @@ import Title from "./Title"
 import img1 from '../assets/projects/YOWL.png';
 import Trelloclone from '../assets/projects/Trello Clone.jpg';
 import img4 from '../assets/projects/4.png';
-import img5 from '../assets/projects/5.png';
 import img6 from '../assets/projects/6.png';
+import rotten from '../assets/projects/rotten.png';
+import rottenweb from '../assets/projects/rottenweb.png';
 import { Github, Video } from "lucide-react";
 
 
@@ -52,7 +53,7 @@ const projects = [
         technologies: ['Next.js', 'MongoDB', 'TypeScript'],
         demoLink: 'https://rottentomatos.onrender.com/',
         repoLink: 'https://github.com/toumaniaboubacarbamba/RottenTomatos',
-        image: img5,
+        image: rottenweb,
     },
     {
         id: 6,
@@ -63,6 +64,15 @@ const projects = [
         repoLink: '#',
         image: img6,
     },
+    {
+    id: 7,
+    title: 'Application mobile Rotten Tomatoes',
+    description: 'Version mobile de la plateforme de films avec authentification, favoris, recherche et catégories. Architecture MVVM avec Flutter et intégration des APIs TMDB et Laravel.',
+    technologies: ['Flutter', 'Dart','dio', 'TMDB API', 'Laravel API'],
+    demoLink: '#',
+    repoLink: 'https://github.com/toumaniaboubacarbamba/rotten_tomatoes_mob',
+    image: rotten,
+},
 ];
 
 const Projects = () => {
