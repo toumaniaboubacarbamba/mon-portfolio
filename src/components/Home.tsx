@@ -45,7 +45,7 @@ const Home = () => {
               background: "var(--accent)", display: "inline-block",
               boxShadow: "0 0 8px var(--accent)"
             }} />
-            Disponible · Abidjan, Côte d'Ivoire
+            Disponible · Abidjan, Côte d'Ivoire 
           </p>
 
           <h1 className="fade-up fade-up-d1" style={{
@@ -58,17 +58,18 @@ const Home = () => {
             <span style={{
               color: "var(--accent)",
               WebkitTextStroke: "0px"
-            }}>Bamba Aboubacar Toumani</span>
+            }}>Bamba Aboubacar Toumani  </span>
           </h1>
 
           <p className="fade-up fade-up-d2" style={{
-            color: "var(--muted2)", fontSize: "1rem",
-            maxWidth: "520px", lineHeight: 1.8, marginBottom: "2rem"
-          }}>
-            Développeur <strong style={{ color: "var(--text)", fontWeight: 600 }}>Fullstack & Mobile</strong> titulaire d'une Licence, finalisant mon Master 2.
-            Formé au bootcamp <strong style={{ color: "var(--accent)", fontWeight: 600 }}>We.Code × Epitech</strong>.
-            Je construis des apps web et mobiles du prototype à la prod.
-          </p>
+  color: "var(--muted2)", fontSize: "1rem",
+  maxWidth: "520px", lineHeight: 1.8, marginBottom: "2rem"
+}}>
+  Je construis des <strong style={{ color: "var(--text)", fontWeight: 600 }}>APIs robustes</strong> et des{" "}
+  <strong style={{ color: "var(--text)", fontWeight: 600 }}>apps mobiles Flutter</strong> —
+  de la conception à la mise en production.
+  Deux univers, une même exigence.
+</p>
 
           {/* CTA */}
           <div className="fade-up fade-up-d3" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "2.5rem" }}>

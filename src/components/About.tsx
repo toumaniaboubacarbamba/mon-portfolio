@@ -94,18 +94,14 @@ const About = () => {
   color: "var(--muted2)", lineHeight: 1.85,
   marginBottom: "2rem", fontSize: ".95rem"
 }}>
-  Développeur titulaire d'une{" "}
-  <strong style={{ color: "var(--text)" }}>Licence en Informatique Developpeur d'Application</strong>,
-  finalisant mon <strong style={{ color: "var(--text)" }}>Master 2</strong>.
-  Formé au bootcamp <strong style={{ color: "var(--accent)" }}>We.Code × Epitech</strong>,
-  j'ai une appétence naturelle pour le{" "}
-  <strong style={{ color: "var(--text)" }}>backend</strong> — Laravel, NestJS, Next.js —
-  et je développe des applications mobiles avec{" "}
-  <strong style={{ color: "var(--text)" }}>Flutter</strong>.
-  À l'aise sur le frontend sans en faire ma spécialité,
-  je me sens le plus utile côté{" "}
-  <strong style={{ color: "var(--accent)" }}>architecture, API et logique métier</strong>.
-  Je cherche un premier challenge professionnel où apporter de la valeur concrète.
+  Titulaire d'une{" "}
+  <strong style={{ color: "var(--text)" }}>Licence en Informatique Développeur d'Application</strong>,
+  finalisant mon <strong style={{ color: "var(--text)" }}>Master 2</strong> et formé au bootcamp{" "}
+  <strong style={{ color: "var(--accent)" }}>We.Code × Epitech</strong>.
+  Mon attrait va naturellement vers le{" "}
+  <strong style={{ color: "var(--text)" }}>backend</strong> — architecture, APIs, logique métier —
+  et le <strong style={{ color: "var(--text)" }}>mobile</strong> avec Flutter.
+  Je cherche un poste où progresser concrètement dans un vrai environnement pro.
 </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
