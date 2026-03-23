@@ -4,11 +4,11 @@ import img from '../assets/img.jpg'
 
 const cards = [
   {
-    icon: <Globe size={20} />,
-    title: "Développeur Web Fullstack",
-    desc: "Je conçois et développe des applications web complètes — de l'API REST aux interfaces React/Next.js performantes.",
-    color: "var(--accent)"
-  },
+  icon: <Globe size={20} />,
+  title: "Développeur Backend & Fullstack",
+  desc: "À l'aise sur Laravel, NestJS et Next.js pour concevoir des APIs solides et des architectures backend robustes. Le frontend ? Je m'en sors, sans en faire ma spécialité.",
+  color: "var(--accent)"
+},
   {
     icon: <Smartphone size={20} />,
     title: "Développeur Mobile Flutter",
@@ -24,7 +24,7 @@ const cards = [
 ]
 
 const stats = [
-  { val: "3+", label: "ans d'expérience" },
+  { val: "1+", label: "ans d'expérience" },
   { val: "10+", label: "projets livrés" },
   { val: "M2", label: "en cours" },
 ]
@@ -91,15 +91,22 @@ const About = () => {
           <div>
             <Title title="À propos" sub="about me" />
             <p style={{
-              color: "var(--muted2)", lineHeight: 1.85,
-              marginBottom: "2rem", fontSize: ".95rem"
-            }}>
-              Développeur passionné, titulaire d'une <strong style={{ color: "var(--text)" }}>Licence en informatique</strong> et en cours de finalisation de mon{" "}
-              <strong style={{ color: "var(--text)" }}>Master 2</strong>. Formé intensivement au bootcamp{" "}
-              <strong style={{ color: "var(--accent)" }}>We.Code × Epitech</strong>, je maîtrise l'écosystème
-              JavaScript/TypeScript côté web et Flutter côté mobile.
-              Je cherche un premier challenge professionnel à impact.
-            </p>
+  color: "var(--muted2)", lineHeight: 1.85,
+  marginBottom: "2rem", fontSize: ".95rem"
+}}>
+  Développeur titulaire d'une{" "}
+  <strong style={{ color: "var(--text)" }}>Licence en Informatique Developpeur d'Application</strong>,
+  finalisant mon <strong style={{ color: "var(--text)" }}>Master 2</strong>.
+  Formé au bootcamp <strong style={{ color: "var(--accent)" }}>We.Code × Epitech</strong>,
+  j'ai une appétence naturelle pour le{" "}
+  <strong style={{ color: "var(--text)" }}>backend</strong> — Laravel, NestJS, Next.js —
+  et je développe des applications mobiles avec{" "}
+  <strong style={{ color: "var(--text)" }}>Flutter</strong>.
+  À l'aise sur le frontend sans en faire ma spécialité,
+  je me sens le plus utile côté{" "}
+  <strong style={{ color: "var(--accent)" }}>architecture, API et logique métier</strong>.
+  Je cherche un premier challenge professionnel où apporter de la valeur concrète.
+</p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               {cards.map((c, i) => (

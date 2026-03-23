@@ -1,7 +1,7 @@
 import Title from "./Title"
 import gs2e from "../assets/companies/gs2e.jpeg"
 import wecode from "../assets/companies/WeCode.png"
-
+import veone from "../assets/companies/veone.png"
 import imgCSS from "../assets/techno/css.png"
 import imgJS from "../assets/techno/js.png"
 import imgREACT from "../assets/techno/react.png"
@@ -69,6 +69,20 @@ const experiences = [
     image: wecode,
     color: "var(--accent)"
   },
+  {
+  id: 3,
+  role: "Stagiaire Développeur Mobile",
+  company: "Veone",
+  period: "2026 · 3 mois",
+  description: [
+    "Stage au sein du département mobile",
+    "Développement d'applications mobiles avec Flutter",
+    "Intégration d'APIs et optimisation des performances",
+    "Collaboration avec les équipes backend et design pour créer des expériences utilisateur fluides",
+  ],
+  image: veone,
+  color: "var(--purple)"
+},
 ]
 
 const Experiences = () => {
