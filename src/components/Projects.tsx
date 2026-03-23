@@ -35,7 +35,12 @@ function getAdminProjects(): Project[] {
   catch { return [] }
 }
 
-const typeConfig: Record<string, { label: string; color: string; icon: JSX.Element }> = {
+type TypeKey = "mobile" | "fullstack" | "frontend" | "backend"
+interface TypeConfig { label: string; color: string; icon: React.ReactNode }
+
+import React from "react"
+
+const typeConfig: Record<TypeKey, TypeConfig> = {
   mobile:    { label:"Mobile",    color:"var(--purple)",  icon:<Smartphone size={11}/> },
   fullstack: { label:"Fullstack", color:"var(--accent2)", icon:<Globe size={11}/> },
   frontend:  { label:"Frontend",  color:"var(--accent)",  icon:<Layout size={11}/> },
@@ -72,7 +77,7 @@ const Projects = ({ refreshKey=0 }: { refreshKey?: number }) => {
         {filtered.length===0 ? (
           <div style={{ gridColumn:"1/-1", textAlign:"center", padding:"4rem", border:"1px dashed var(--border)", borderRadius:"var(--r-md)", fontFamily:"var(--mono)", fontSize:".82rem", color:"var(--muted)" }}>// Aucun projet dans cette catégorie.</div>
         ) : filtered.map(project => {
-          const tc = typeConfig[project.type||"fullstack"]||typeConfig.fullstack
+          const tc = typeConfig[(project.type as TypeKey) || "fullstack"] ?? typeConfig.fullstack
           return (
             <div key={project.id} style={{ background:"var(--card)", border:"1px solid var(--border)", borderRadius:"var(--r-md)", overflow:"hidden", transition:"all .25s", display:"flex", flexDirection:"column" }}
               onMouseEnter={e=>{e.currentTarget.style.borderColor="var(--border2)";e.currentTarget.style.transform="translateY(-3px)"}}
