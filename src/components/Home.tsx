@@ -2,8 +2,9 @@ import { Mail, Github, Linkedin, ArrowDown } from "lucide-react"
 //import img from '../assets/Photo pro 1.jpg'
 
 const stack = [
-  "React / Next.js", "Flutter", "Node.js", "TypeScript",
-  "Laravel", "React Native", "MongoDB", "PostgreSQL"
+  "Laravel", "Flutter", "Node.js", "TypeScript",
+  "React / Next.js", "React Native", "MongoDB", "PostgreSQL", "MySQL",
+  "Dart", "Vue.js", "Tailwind CSS"
 ]
 
 const Home = () => {
