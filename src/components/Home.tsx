@@ -1,5 +1,5 @@
 import { Mail, Github, Linkedin, ArrowDown } from "lucide-react"
-import img from '../assets/Photo pro 1.jpg'
+//import img from '../assets/Photo pro 1.jpg'
 
 const stack = [
   "React / Next.js", "Flutter", "Node.js", "TypeScript",
@@ -140,7 +140,7 @@ const Home = () => {
             background: "linear-gradient(135deg, var(--accent), var(--accent2))",
             opacity: .25, filter: "blur(1px)"
           }} />
-          <img
+          {/* <img
             src={img}
             alt="Toumani Bamba"
             style={{
@@ -149,7 +149,7 @@ const Home = () => {
               borderRadius: "30% 70% 70% 30% / 67% 62% 38% 33%",
               border: "2px solid rgba(79,255,176,.3)"
             }}
-          />
+          /> */}
         </div>
       </div>
 
