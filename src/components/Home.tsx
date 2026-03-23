@@ -58,7 +58,7 @@ const Home = () => {
             <span style={{
               color: "var(--accent)",
               WebkitTextStroke: "0px"
-            }}>Toumani</span>
+            }}>Bamba Aboubacar Toumani</span>
           </h1>
 
           <p className="fade-up fade-up-d2" style={{
