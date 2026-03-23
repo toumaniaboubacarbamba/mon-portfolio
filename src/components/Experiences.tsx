@@ -1,7 +1,7 @@
 import Title from "./Title"
 import gs2e from "../assets/companies/gs2e.jpeg"
 import wecode from "../assets/companies/WeCode.png"
-import veone from "../assets/companies/veone.png"
+import veone from "../assets/companies/Veone.png"
 import imgCSS from "../assets/techno/css.png"
 import imgJS from "../assets/techno/js.png"
 import imgREACT from "../assets/techno/react.png"
@@ -73,7 +73,7 @@ const experiences = [
   id: 3,
   role: "Stagiaire Développeur Mobile",
   company: "Veone",
-  period: "2026 · 3 mois",
+  period: "2026  · 3 mois",
   description: [
     "Stage au sein du département mobile",
     "Développement d'applications mobiles avec Flutter",
