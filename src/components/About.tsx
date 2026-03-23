@@ -1,63 +1,146 @@
+import { Globe, Smartphone, Zap } from "lucide-react"
 import Title from "./Title"
 import img from '../assets/img.jpg'
-//Paintbrush
-import {  LetterText, Settings } from "lucide-react";
 
-const aboutSections = [
-    {
-        id: 1,
-        title: "Développeur Frontend",
-        description: "Créer des interfaces utilisateur attrayantes et fonctionnelles est ma priorité.",
-        icon: <LetterText className="text-accent scale-150" />,
-    },
-    {
-        id: 2,
-        title: "Développeur Backend",
-        description: "Je maîtrise les bases du développement backend pour créer des APIs robustes.",
-        icon: <Settings className="text-accent scale-150" />,
-    },
-    // {
-    //     id: 3,
-    //     title: "Passionné par l'UI/UX",
-    //     icon: <Paintbrush className="text-accent scale-150" />,
-    // },
-];
+const cards = [
+  {
+    icon: <Globe size={20} />,
+    title: "Développeur Web Fullstack",
+    desc: "Je conçois et développe des applications web complètes — de l'API REST aux interfaces React/Next.js performantes.",
+    color: "var(--accent)"
+  },
+  {
+    icon: <Smartphone size={20} />,
+    title: "Développeur Mobile Flutter",
+    desc: "Applications mobiles cross-platform avec Flutter & Dart, architecture MVVM, intégration d'APIs complexes.",
+    color: "var(--purple)"
+  },
+  {
+    icon: <Zap size={20} />,
+    title: "Orienté performance",
+    desc: "Du prototype au déploiement, je livre un code propre, documenté et maintenable, avec une vraie obsession des détails.",
+    color: "var(--accent2)"
+  }
+]
+
+const stats = [
+  { val: "3+", label: "ans d'expérience" },
+  { val: "10+", label: "projets livrés" },
+  { val: "M2", label: "en cours" },
+]
 
 const About = () => {
-    return (
-        <div className="bg-base-300 p-10 mb-10 md:mb-32" id="About">
-            <Title title="À propos" />
-            <div className="md:h-screen flex justify-center items-center ">
-                <div className="hidden md:block">
-                    <img src={img} alt="" className=" w-96 object-cover rounded-xl"
-                    />
-                </div>
+  return (
+    <section id="About" style={{
+      background: "var(--bg2)",
+      borderTop: "1px solid var(--border)",
+      borderBottom: "1px solid var(--border)",
+      padding: "7rem 2rem"
+    }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{
+          display: "grid", gridTemplateColumns: "1fr 1fr",
+          gap: "5rem", alignItems: "center"
+        }} className="about-grid">
 
-                <div className="md:ml-4 space-y-4">
-                    {aboutSections.map((section) => (
-                        <div key={section.id}
-                            className="flex flex-col md:flex-row items-center bg-base-100 p-5 rounded-xl md:w-96 shadow-xl"
-                        >
-                            <div className="mb-2 md:mb-0">
-                                {section.icon}
-                            </div>
-                            <div className="md:ml-4 text-center md:text-left">
-                                <h2 className="text-xl  font-bold mb-1">
-                                    {section.title}
-                                </h2>
-                                <p className="text-sm">
-                                    {section.description}
-                                </p>
-                            </div>
-                        </div>
-                    ))
-
-                    }
-                </div>
-
+          {/* Photo col */}
+          <div style={{ position: "relative" }} className="about-photo-col">
+            <div style={{
+              position: "absolute", top: -20, left: -20,
+              width: "60%", height: "60%",
+              background: "radial-gradient(circle, rgba(79,255,176,.07) 0%, transparent 70%)",
+              pointerEvents: "none"
+            }} />
+            <div style={{
+              position: "relative",
+              border: "1px solid var(--border)",
+              borderRadius: "var(--r-lg)",
+              overflow: "hidden"
+            }}>
+              <img src={img} alt="Toumani" style={{
+                width: "100%", display: "block",
+                objectFit: "cover", maxHeight: "460px"
+              }} />
+              {/* Stats bar */}
+              <div style={{
+                position: "absolute", bottom: 0, left: 0, right: 0,
+                background: "rgba(7,9,14,.88)",
+                backdropFilter: "blur(12px)",
+                borderTop: "1px solid var(--border)",
+                padding: "1.2rem 1.5rem",
+                display: "flex", justifyContent: "space-around"
+              }}>
+                {stats.map(s => (
+                  <div key={s.val} style={{ textAlign: "center" }}>
+                    <strong style={{
+                      display: "block", fontSize: "1.5rem",
+                      fontWeight: 800, color: "var(--accent)"
+                    }}>{s.val}</strong>
+                    <span style={{
+                      fontFamily: "var(--mono)", fontSize: ".65rem",
+                      color: "var(--muted2)", textTransform: "uppercase",
+                      letterSpacing: ".08em"
+                    }}>{s.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
+          </div>
+
+          {/* Content col */}
+          <div>
+            <Title title="À propos" sub="about me" />
+            <p style={{
+              color: "var(--muted2)", lineHeight: 1.85,
+              marginBottom: "2rem", fontSize: ".95rem"
+            }}>
+              Développeur passionné, titulaire d'une <strong style={{ color: "var(--text)" }}>Licence en informatique</strong> et en cours de finalisation de mon{" "}
+              <strong style={{ color: "var(--text)" }}>Master 2</strong>. Formé intensivement au bootcamp{" "}
+              <strong style={{ color: "var(--accent)" }}>We.Code × Epitech</strong>, je maîtrise l'écosystème
+              JavaScript/TypeScript côté web et Flutter côté mobile.
+              Je cherche un premier challenge professionnel à impact.
+            </p>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              {cards.map((c, i) => (
+                <div key={i} style={{
+                  display: "flex", alignItems: "flex-start", gap: "1rem",
+                  background: "var(--card)", border: "1px solid var(--border)",
+                  borderRadius: "var(--r-md)", padding: "1.1rem 1.2rem",
+                  transition: "border-color .2s"
+                }}
+                  onMouseEnter={e => (e.currentTarget.style.borderColor = "var(--border2)")}
+                  onMouseLeave={e => (e.currentTarget.style.borderColor = "var(--border)")}
+                >
+                  <div style={{
+                    width: 36, height: 36, borderRadius: "var(--r-sm)",
+                    background: `${c.color}14`,
+                    border: `1px solid ${c.color}30`,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: c.color, flexShrink: 0
+                  }}>{c.icon}</div>
+                  <div>
+                    <h3 style={{
+                      fontSize: ".92rem", fontWeight: 700,
+                      marginBottom: ".3rem", color: "var(--text)"
+                    }}>{c.title}</h3>
+                    <p style={{ fontSize: ".82rem", color: "var(--muted2)", lineHeight: 1.6 }}>{c.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-    )
+      </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .about-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .about-photo-col { display: none !important; }
+        }
+      `}</style>
+    </section>
+  )
 }
 
 export default About
