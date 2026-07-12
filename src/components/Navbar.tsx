@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react"
-import { Code2, Menu, X, Lock } from "lucide-react"
+import { Code2, Menu, X } from "lucide-react"
 
-interface NavbarProps {
-  onAdminClick: () => void
-}
-
-const Navbar = ({ onAdminClick }: NavbarProps) => {
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -63,26 +59,7 @@ const Navbar = ({ onAdminClick }: NavbarProps) => {
         </ul>
 
         <div style={{ display: "flex", gap: ".8rem", alignItems: "center" }}>
-          {/* Admin btn */}
-          <button onClick={onAdminClick} style={{
-            display: "flex", alignItems: "center", gap: ".4rem",
-            background: "none", border: "1px solid var(--border2)",
-            color: "var(--muted2)", borderRadius: "var(--r-sm)",
-            padding: ".3rem .75rem", fontFamily: "var(--mono)",
-            fontSize: ".7rem", cursor: "pointer", letterSpacing: ".06em",
-            textTransform: "uppercase", transition: "all .2s"
-          }}
-            onMouseEnter={e => {
-              e.currentTarget.style.borderColor = "var(--accent)"
-              e.currentTarget.style.color = "var(--accent)"
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.borderColor = "var(--border2)"
-              e.currentTarget.style.color = "var(--muted2)"
-            }}
-          >
-            <Lock size={11} /> Admin
-          </button>
+          {/* Admin button removed by request */}
 
           {/* Mobile menu toggle */}
           <button

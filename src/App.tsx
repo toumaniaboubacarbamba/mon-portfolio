@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect } from "react"
 import Navbar from "./components/Navbar"
 import Home from "./components/Home"
 import About from "./components/About"
@@ -18,13 +18,21 @@ export default function App() {
   const openAdmin = () => setAdminOpen(true)
   const closeAdmin = () => setAdminOpen(false)
 
+  useEffect(() => {
+    if (window.location.hash === "#admin") {
+      setAdminOpen(true)
+      // Nettoie le hash pour ne pas le laisser visible dans l'URL
+      window.history.replaceState(null, "", window.location.pathname)
+    }
+  }, [])
+
   return (
     <div style={{ position: "relative" }}>
       {/* Subtle noise texture */}
       <div className="noise" />
 
       {/* Navigation */}
-      <Navbar onAdminClick={openAdmin} />
+      <Navbar />
 
       {/* Hero — full viewport */}
       <div style={{ padding: "0 2rem", maxWidth: 1300, margin: "0 auto" }}>
@@ -43,7 +51,7 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      <Footer onAdminClick={openAdmin} />
+      <Footer />
 
       {/* Admin Panel (overlay) */}
       {adminOpen && (

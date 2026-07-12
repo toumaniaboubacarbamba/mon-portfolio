@@ -1,10 +1,6 @@
 import { Github, Linkedin, Mail, Facebook, Code2 } from "lucide-react"
 
-interface FooterProps {
-  onAdminClick: () => void
-}
-
-const Footer = ({ onAdminClick }: FooterProps) => {
+const Footer = () => {
   return (
     <footer style={{
       borderTop: "1px solid var(--border)",
@@ -55,19 +51,7 @@ const Footer = ({ onAdminClick }: FooterProps) => {
           ))}
         </div>
 
-        {/* Admin link */}
-        <button onClick={onAdminClick} style={{
-          background: "none", border: "none",
-          fontFamily: "var(--mono)", fontSize: ".65rem",
-          color: "var(--muted)", cursor: "pointer",
-          letterSpacing: ".08em", textTransform: "uppercase",
-          transition: "color .2s", padding: 0
-        }}
-          onMouseEnter={e => (e.currentTarget.style.color = "var(--accent)")}
-          onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}
-        >
-          // admin
-        </button>
+        {/* Admin link removed by request */}
       </div>
     </footer>
   )
