@@ -15,7 +15,7 @@ export default function App() {
     setProjectsKey(k => k + 1)
   }, [])
 
-  const openAdmin = () => setAdminOpen(true)
+  
   const closeAdmin = () => setAdminOpen(false)
 
   useEffect(() => {
