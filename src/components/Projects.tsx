@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { Github, ExternalLink, Smartphone, Globe, Layout } from "lucide-react"
 import Title from "./Title"
 
@@ -17,6 +17,7 @@ export interface Project {
   demoLink?: string
   repoLink?: string
   image?: string
+  imageUrl?: string
   type?: "mobile" | "fullstack" | "frontend" | "backend"
 }
 
@@ -37,8 +38,6 @@ function getAdminProjects(): Project[] {
 
 type TypeKey = "mobile" | "fullstack" | "frontend" | "backend"
 interface TypeConfig { label: string; color: string; icon: React.ReactNode }
-
-import React from "react"
 
 const typeConfig: Record<TypeKey, TypeConfig> = {
   mobile:    { label:"Mobile",    color:"var(--purple)",  icon:<Smartphone size={11}/> },
@@ -78,14 +77,15 @@ const Projects = ({ refreshKey=0 }: { refreshKey?: number }) => {
           <div style={{ gridColumn:"1/-1", textAlign:"center", padding:"4rem", border:"1px dashed var(--border)", borderRadius:"var(--r-md)", fontFamily:"var(--mono)", fontSize:".82rem", color:"var(--muted)" }}>// Aucun projet dans cette catégorie.</div>
         ) : filtered.map(project => {
           const tc = typeConfig[(project.type as TypeKey) || "fullstack"] ?? typeConfig.fullstack
+          const imageSrc = project.image || project.imageUrl
           return (
             <div key={project.id} style={{ background:"var(--card)", border:"1px solid var(--border)", borderRadius:"var(--r-md)", overflow:"hidden", transition:"all .25s", display:"flex", flexDirection:"column" }}
               onMouseEnter={e=>{e.currentTarget.style.borderColor="var(--border2)";e.currentTarget.style.transform="translateY(-3px)"}}
               onMouseLeave={e=>{e.currentTarget.style.borderColor="var(--border)";e.currentTarget.style.transform="translateY(0)"}}
             >
-              {project.image && (
+              {imageSrc && (
                 <div style={{ position:"relative", overflow:"hidden", height:200 }}>
-                  <img src={project.image as string} alt={project.title} style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }} />
+                  <img src={imageSrc} alt={project.title} style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }} />
                   <div style={{ position:"absolute", inset:0, background:"linear-gradient(to bottom, transparent 50%, rgba(14,18,25,.7))" }} />
                   <div style={{ position:"absolute", top:10, left:10, display:"flex", alignItems:"center", gap:".3rem", background:"rgba(7,9,14,.82)", backdropFilter:"blur(6px)", border:`1px solid ${tc.color}40`, borderRadius:"4px", padding:".2rem .6rem", fontFamily:"var(--mono)", fontSize:".62rem", color:tc.color, letterSpacing:".08em", textTransform:"uppercase" }}>
                     {tc.icon} {tc.label}

@@ -11,6 +11,7 @@ interface AdminProject {
   technologies: string[]
   demoLink: string
   repoLink: string
+  imageUrl?: string
   type: "mobile" | "fullstack" | "frontend" | "backend"
 }
 
@@ -105,7 +106,8 @@ const Login = ({ onSuccess }: { onSuccess: () => void }) => {
 const AddForm = ({ onAdded }: { onAdded: () => void }) => {
   const [form, setForm] = useState({
     title: "", description: "", technologies: "",
-    demoLink: "", repoLink: "", type: "fullstack" as AdminProject["type"]
+    demoLink: "", repoLink: "", type: "fullstack" as AdminProject["type"],
+    imageUrl: ""
   })
   const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null)
 
@@ -124,10 +126,11 @@ const AddForm = ({ onAdded }: { onAdded: () => void }) => {
       technologies: form.technologies.split(",").map(s => s.trim()).filter(Boolean),
       demoLink: form.demoLink.trim(),
       repoLink: form.repoLink.trim(),
-      type: form.type
+      type: form.type,
+      imageUrl: form.imageUrl.trim()
     }
     saveProjects([newProject, ...projects])
-    setForm({ title: "", description: "", technologies: "", demoLink: "", repoLink: "", type: "fullstack" })
+    setForm({ title: "", description: "", technologies: "", demoLink: "", repoLink: "", type: "fullstack", imageUrl: "" })
     setMsg({ text: "✓ Projet publié avec succès !", ok: true })
     onAdded()
     setTimeout(() => setMsg(null), 3000)
@@ -197,6 +200,17 @@ const AddForm = ({ onAdded }: { onAdded: () => void }) => {
           <input style={inputStyle} value={form.technologies}
             onChange={e => set("technologies", e.target.value)}
             placeholder="React Native, Firebase, Node.js"
+            onFocus={e => (e.currentTarget.style.borderColor = "var(--accent)")}
+            onBlur={e => (e.currentTarget.style.borderColor = "var(--border)")}
+          />
+        </div>
+
+        {/* Image du projet */}
+        <div style={{ display: "flex", flexDirection: "column", gap: ".4rem", gridColumn: "1/-1" }}>
+          <label style={labelStyle}>Image du projet (lien ImgBB)</label>
+          <input style={inputStyle} type="url" value={form.imageUrl}
+            onChange={e => set("imageUrl", e.target.value)}
+            placeholder="https://i.ibb.co/xxx/mon-image.png"
             onFocus={e => (e.currentTarget.style.borderColor = "var(--accent)")}
             onBlur={e => (e.currentTarget.style.borderColor = "var(--border)")}
           />
