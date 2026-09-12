@@ -2,6 +2,8 @@ import { useState } from "react"
 import React from "react"
 import { Github, ExternalLink, Smartphone, Globe, Layout } from "lucide-react"
 import Title from "./Title"
+import type { AdminProject } from "../utils/projects"
+import { loadProjects } from "../utils/projects"
 
 import img1 from '../assets/projects/YOWL.png'
 import Trelloclone from '../assets/projects/Trello Clone.jpg'
@@ -10,20 +12,7 @@ import img6 from '../assets/projects/6.png'
 import rotten from '../assets/projects/rotten.png'
 import rottenweb from '../assets/projects/rottenweb.png'
 
-export interface Project {
-  id: number | string
-  title: string
-  description: string
-  technologies: string[]
-  demoLink?: string
-  repoLink?: string
-  image?: string
-  type?: "mobile" | "fullstack" | "frontend" | "backend"
-  statut?: string
-  role?: string
-}
-
-const STATIC_PROJECTS: Project[] = [
+const STATIC_PROJECTS: AdminProject[] = [
   { id:1, title:"Plateforme de commentaires YOWL", description:"Application web permettant aux utilisateurs de commenter tout type de contenu sur internet avec système de modération et notation.", technologies:["Laravel","Vue.js","MySQL"], demoLink:"https://www.figma.com/design/my1EaSCuzlk87Mfn4Je5PF/YOWL-With-white-theme?node-id=0-1", repoLink:"https://github.com/toumaniaboubacarbamba/YOWL", image:img1, type:"fullstack", statut:"Terminé", role:"Développeur Fullstack" },
   { id:3, title:"Application mobile Trello", description:"Application mobile interagissant avec l'API Trello pour gérer vos tableaux et tâches depuis votre smartphone.", technologies:["React Native","Trello API","Expo"], image:Trelloclone, type:"mobile", statut:"Terminé", role:"Développeur Mobile" },
   { id:4, title:"MyShowTime — Billetterie événementielle", description:"Système complet de publication et réservation de tickets d'événements avec paiement en ligne et gestion des places.", technologies:["React","NestJS","MongoDB"], demoLink:"https://my-show-time.onrender.com/", repoLink:"https://github.com/toumaniaboubacarbamba/myshowtime", image:img4, type:"fullstack", statut:"En ligne", role:"Développeur Fullstack" },
@@ -32,11 +21,8 @@ const STATIC_PROJECTS: Project[] = [
   { id:7, title:"Rotten Tomatoes Mobile", description:"Version mobile de la plateforme de films avec authentification, favoris, recherche et catégories. Architecture MVVM avec Flutter.", technologies:["Flutter","Dart","dio","TMDB API","Laravel API"], repoLink:"https://github.com/toumaniaboubacarbamba/rotten_tomatoes_mob", image:rotten, type:"mobile", statut:"En cours", role:"Développeur Mobile" },
 ]
 
-const STORAGE_KEY = "portfolio_projects_v1"
-function getAdminProjects(): Project[] {
-  try { const raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : [] }
-  catch { return [] }
-}
+// Admin projects persisted via localStorage
+// use `loadProjects()` from utils
 
 type TypeKey = "mobile" | "fullstack" | "frontend" | "backend"
 interface TypeConfig { label: string; color: string; icon: React.ReactNode }
@@ -60,7 +46,7 @@ const FILTERS = ["tous","mobile","fullstack","frontend"]
 const Projects = ({ refreshKey=0 }: { refreshKey?: number }) => {
   void refreshKey
   const [activeFilter, setActiveFilter] = useState("tous")
-  const allProjects = [...getAdminProjects(), ...STATIC_PROJECTS]
+  const allProjects = [...loadProjects(), ...STATIC_PROJECTS]
   const filtered = activeFilter === "tous" ? allProjects : allProjects.filter(p => p.type === activeFilter)
 
   return (
