@@ -1,22 +1,9 @@
 import { useState, useRef } from "react"
-import { X, Plus, Trash2, Lock, FolderOpen, Upload, Image, Pencil, Check, ChevronDown, ChevronUp } from "lucide-react"
-
+import { X, Plus, Trash2, Lock, Upload, Image, Pencil, Check, ChevronDown, ChevronUp } from "lucide-react"
+import type { AdminProject } from "../utils/projects"
+import { loadProjects, saveProjects } from "../utils/projects"
 const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD as string
 const IMGBB_KEY = import.meta.env.VITE_IMGBB_KEY as string
-const STORAGE_KEY = "portfolio_projects_v1"
-
-export interface AdminProject {
-  id: number
-  title: string
-  description: string
-  technologies: string[]
-  demoLink: string
-  repoLink: string
-  type: "mobile" | "fullstack" | "frontend" | "backend"
-  image?: string
-  statut?: "En cours" | "Terminé" | "Archivé"
-  role?: string
-}
 
 interface AdminPanelProps {
   onClose: () => void
@@ -31,14 +18,6 @@ const STATUT_COLOR: Record<string, string> = {
   "En cours": "var(--accent2)",
   "Terminé":  "var(--accent)",
   "Archivé":  "var(--muted)",
-}
-
-export function loadProjects(): AdminProject[] {
-  try { const raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : [] }
-  catch { return [] }
-}
-function saveProjects(projects: AdminProject[]) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(projects))
 }
 
 // ─── STYLES COMMUNS ──────────────────────────────────────────────
