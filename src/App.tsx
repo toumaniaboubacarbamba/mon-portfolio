@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from "react"
 import Navbar from "./components/Navbar"
+import CursorGlow from "./components/CursorGlow"
 import Home from "./components/Home"
 import About from "./components/About"
 import Experiences from "./components/Experiences"
@@ -28,6 +29,7 @@ export default function App() {
 
   return (
     <div style={{ position: "relative" }}>
+      <CursorGlow />
       {/* Subtle noise texture */}
       <div className="noise" />
 
