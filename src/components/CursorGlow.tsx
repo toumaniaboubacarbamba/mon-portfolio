@@ -59,7 +59,6 @@ const CursorGlow = () => {
         transition: "width .2s, height .2s",
       }}/>
 
-      <style>{`* { cursor: none !important; }`}</style>
     </>
   )
 }
