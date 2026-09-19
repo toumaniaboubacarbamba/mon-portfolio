@@ -1,64 +1,64 @@
-import { useEffect, useRef } from "react"
+import { useEffect } from "react"
 
 const CursorGlow = () => {
-  const dotRef    = useRef<HTMLDivElement>(null)
-  const circleRef = useRef<HTMLDivElement>(null)
-  const pos = useRef({ cx: 0, cy: 0, tx: 0, ty: 0 })
-  const rafRef = useRef<number>(0)
-
   useEffect(() => {
+    // Crée les éléments directement dans le body — hors de l'arbre React
+    const dot = document.createElement("div")
+    const circle = document.createElement("div")
+
+    Object.assign(dot.style, {
+      position: "fixed", zIndex: "9999",
+      top: "0", left: "0",
+      width: "6px", height: "6px",
+      borderRadius: "50%",
+      background: "#4FFFB0",
+      pointerEvents: "none",
+      willChange: "transform",
+      boxShadow: "0 0 6px #4FFFB0",
+    })
+
+    Object.assign(circle.style, {
+      position: "fixed", zIndex: "9998",
+      top: "0", left: "0",
+      width: "36px", height: "36px",
+      borderRadius: "50%",
+      border: "1px solid rgba(79,255,176,.5)",
+      pointerEvents: "none",
+      willChange: "transform",
+    })
+
+    document.body.appendChild(dot)
+    document.body.appendChild(circle)
+
+    let cx = 0, cy = 0, tx = 0, ty = 0
+    let rafId: number
+
     const onMove = (e: MouseEvent) => {
-      pos.current.tx = e.clientX
-      pos.current.ty = e.clientY
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate(${e.clientX - 3}px, ${e.clientY - 3}px)`
-      }
+      tx = e.clientX
+      ty = e.clientY
+      dot.style.transform = `translate(${tx - 3}px, ${ty - 3}px)`
     }
 
     const animate = () => {
-      const { cx, cy, tx, ty } = pos.current
-      const nx = cx + (tx - cx) * 0.12
-      const ny = cy + (ty - cy) * 0.12
-      pos.current.cx = nx
-      pos.current.cy = ny
-      if (circleRef.current) {
-        circleRef.current.style.transform = `translate(${nx - 18}px, ${ny - 18}px)`
-      }
-      rafRef.current = requestAnimationFrame(animate)
+      cx += (tx - cx) * 0.12
+      cy += (ty - cy) * 0.12
+      circle.style.transform = `translate(${cx - 18}px, ${cy - 18}px)`
+      rafId = requestAnimationFrame(animate)
     }
 
     window.addEventListener("mousemove", onMove, { passive: true })
-    rafRef.current = requestAnimationFrame(animate)
+    rafId = requestAnimationFrame(animate)
 
     return () => {
       window.removeEventListener("mousemove", onMove)
-      cancelAnimationFrame(rafRef.current)
+      cancelAnimationFrame(rafId)
+      // Vérifie que les éléments sont bien enfants du body avant de les supprimer
+      if (document.body.contains(dot)) document.body.removeChild(dot)
+      if (document.body.contains(circle)) document.body.removeChild(circle)
     }
   }, [])
 
-  return (
-    <>
-      <div ref={dotRef} style={{
-        position: "fixed", zIndex: 9999,
-        top: 0, left: 0,
-        width: 6, height: 6,
-        borderRadius: "50%",
-        background: "var(--accent)",
-        pointerEvents: "none",
-        willChange: "transform",
-        boxShadow: "0 0 6px var(--accent)",
-      }}/>
-      <div ref={circleRef} style={{
-        position: "fixed", zIndex: 9998,
-        top: 0, left: 0,
-        width: 36, height: 36,
-        borderRadius: "50%",
-        border: "1px solid rgba(79,255,176,.5)",
-        pointerEvents: "none",
-        willChange: "transform",
-      }}/>
-    </>
-  )
+  return null
 }
 
 export default CursorGlow
