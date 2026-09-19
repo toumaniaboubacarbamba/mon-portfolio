@@ -72,3 +72,7 @@ body {
 
 /* Curseur personnalisé */
 * { cursor: none !important; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

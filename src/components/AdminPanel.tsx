@@ -221,7 +221,7 @@ const FormFields = ({ form, set, uploading, preview, setPreview, onUpload, msg }
         <input style={inputStyle} type="url" value={form.repoLink} onChange={e=>set("repoLink",e.target.value)} placeholder="https://github.com/…" onFocus={onFocus} onBlur={onBlur}/>
       </div>
 
-      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      
     </div>
   )
 }
