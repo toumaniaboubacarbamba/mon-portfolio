@@ -55,13 +55,12 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Admin Panel (overlay) */}
-      {adminOpen && (
-        <AdminPanel
-          onClose={closeAdmin}
-          onProjectsChange={handleProjectsChange}
-        />
-      )}
+      <div style={{ display: adminOpen ? "block" : "none" }}>
+  <AdminPanel
+    onClose={closeAdmin}
+    onProjectsChange={handleProjectsChange}
+  />
+</div>
     </div>
   )
 }
