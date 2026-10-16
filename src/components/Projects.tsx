@@ -7,7 +7,6 @@ import { loadProjects } from "../utils/projects"
 
 import Trelloclone from '../assets/projects/Trello Clone.jpg'
 import img4 from '../assets/projects/4.png'
-import img6 from '../assets/projects/6.png'
 import rotten from '../assets/projects/rotten.png'
 import rottenweb from '../assets/projects/rottenweb.png'
 
@@ -15,8 +14,7 @@ const STATIC_PROJECTS: AdminProject[] = [
   { id:1, title:"Application mobile Trello", description:"Application mobile interagissant avec l'API Trello pour gérer vos tableaux et tâches depuis votre smartphone.", technologies:["React Native","Trello API","Expo"], image:Trelloclone, type:"mobile", statut:"Terminé", role:"Développeur Mobile" },
   { id:2, title:"MyShowTime — Billetterie événementielle", description:"Système complet de publication et réservation de tickets d'événements avec paiement en ligne et gestion des places.", technologies:["React","NestJS","MongoDB"], demoLink:"https://my-show-time.onrender.com/", repoLink:"https://github.com/toumaniaboubacarbamba/myshowtime", image:img4, type:"fullstack", statut:"En ligne", role:"Développeur Fullstack" },
   { id:3, title:"RottenTomatoes Web", description:"Plateforme similaire à AlloCiné avec fiches films, critiques, notations et système de recommandations.", technologies:["Next.js","MongoDB","TypeScript"], demoLink:"https://rottentomatos.onrender.com/", repoLink:"https://github.com/toumaniaboubacarbamba/RottenTomatos", image:rottenweb, type:"fullstack", statut:"Terminé", role:"Développeur Fullstack" },
-  { id:4, title:"FreeAds — Annonces classées", description:"Marketplace d'annonces en ligne avec système de recherche, messagerie et gestion des utilisateurs.", technologies:["Laravel","MySQL","JavaScript"], image:img6, type:"fullstack", statut:"Terminé", role:"Développeur Fullstack" },
-  { id:5, title:"Rotten Tomatoes Mobile", description:"Version mobile de la plateforme de films avec authentification, favoris, recherche et catégories. Architecture MVVM avec Flutter.", technologies:["Flutter","Dart","dio","TMDB API","Laravel API"], repoLink:"https://github.com/toumaniaboubacarbamba/rotten_tomatoes_mob", image:rotten, type:"mobile", statut:"En cours", role:"Développeur Mobile" },
+  { id:4, title:"Rotten Tomatoes Mobile", description:"Version mobile de la plateforme de films avec authentification, favoris, recherche et catégories. Architecture MVVM avec Flutter.", technologies:["Flutter","Dart","dio","TMDB API","Laravel API"], repoLink:"https://github.com/toumaniaboubacarbamba/rotten_tomatoes_mob", image:rotten, type:"mobile", statut:"En cours", role:"Développeur Mobile" },
 ]
 
 // Admin projects persisted via localStorage
